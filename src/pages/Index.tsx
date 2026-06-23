@@ -2,10 +2,9 @@ import { Navbar } from "@/components/Navbar"
 import { HeroSection } from "@/components/sections/HeroSection"
 import { UspSection } from "@/components/sections/UspSection"
 import { ServicesSection } from "@/components/sections/ServicesSection"
-import { FeaturesSection } from "@/components/sections/FeaturesSection"
-import { TestimonialsSection } from "@/components/sections/TestimonialsSection"
-import { PricingSection } from "@/components/sections/PricingSection"
-import { CtaSection } from "@/components/sections/CtaSection"
+import { HowWeWorkSection } from "@/components/sections/HowWeWorkSection"
+import { WarehousesSection } from "@/components/sections/WarehousesSection"
+import { ContactFormSection } from "@/components/sections/ContactFormSection"
 import { FooterSection } from "@/components/sections/FooterSection"
 
 const Index = () => {
@@ -16,10 +15,9 @@ const Index = () => {
         <HeroSection />
         <UspSection />
         <ServicesSection />
-        <FeaturesSection />
-        <TestimonialsSection />
-        <PricingSection />
-        <CtaSection />
+        <HowWeWorkSection />
+        <WarehousesSection />
+        <ContactFormSection />
       </main>
       <FooterSection />
     </div>
