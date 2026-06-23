@@ -1,103 +1,79 @@
-import { LiquidCtaButton } from "@/components/buttons/LiquidCtaButton"
-import { Sparkles, ArrowRight } from "lucide-react"
+import Icon from "@/components/ui/icon"
+
+const cards = [
+  { value: "от 100 кг", label: "минимальный объём", icon: "Package" },
+  { value: "15–30 дн", label: "автодоставка", icon: "Truck" },
+  { value: "БЕЛАЯ", label: "доставка с документами", icon: "FileCheck" },
+  { value: "3 склада", label: "в Китае", icon: "Warehouse" },
+]
+
+const stats = [
+  { value: "200+", label: "клиентов" },
+  { value: "3", label: "склада" },
+  { value: "0%", label: "комиссия" },
+  { value: "15–30", label: "дней" },
+]
 
 export function HeroSection() {
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center px-6 pt-24 pb-20 relative">
-      {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-zinc-900/50 via-transparent to-transparent" />
-
-      {/* Content */}
-      <div className="relative z-10 text-center max-w-3xl mx-auto">
-        {/* Badge - customize your announcement */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-900/80 border border-zinc-800 mb-8">
-          <Sparkles className="w-4 h-4 text-zinc-400" />
-          <span className="text-sm text-zinc-400">Встречайте v2.0 — теперь с ИИ</span>
-        </div>
-
-        {/* Headline - customize your value proposition */}
-        <h1 className="font-display text-5xl md:text-7xl font-bold tracking-tight mb-6">
-          <span className="text-zinc-100 block">Создавай быстрее.</span>
-          <span className="bg-gradient-to-r from-zinc-500 via-zinc-300 to-zinc-500 bg-clip-text text-transparent">
-            Запускай умнее.
-          </span>
-        </h1>
-
-        {/* Subheadline - describe your product */}
-        <p className="text-lg md:text-xl text-zinc-500 max-w-2xl mx-auto mb-10 leading-relaxed text-balance">
-          Единая платформа, которая помогает командам создавать, развертывать и масштабировать продукты в 10 раз быстрее. Без сложностей, только результат.
-        </p>
-
-        {/* CTAs */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="#pricing">
-            <LiquidCtaButton>Попробовать бесплатно</LiquidCtaButton>
-          </a>
-          <a
-            href="#features"
-            className="group flex items-center gap-2 px-6 py-3 text-sm font-medium text-zinc-400 hover:text-zinc-100 transition-colors"
-          >
-            <span>Как это работает</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-          </a>
-        </div>
-
-        {/* Social proof */}
-        <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <div className="flex items-center gap-4">
-            <div className="flex -space-x-3">
-              <img
-                src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200"
-                alt="User avatar"
-                className="w-10 h-10 rounded-full border-2 border-zinc-950 hover:-translate-y-1 transition object-cover z-[1]"
-              />
-              <img
-                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200"
-                alt="User avatar"
-                className="w-10 h-10 rounded-full border-2 border-zinc-950 hover:-translate-y-1 transition object-cover z-[2]"
-              />
-              <img
-                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&h=200&auto=format&fit=crop"
-                alt="User avatar"
-                className="w-10 h-10 rounded-full border-2 border-zinc-950 hover:-translate-y-1 transition object-cover z-[3]"
-              />
-              <img
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200"
-                alt="User avatar"
-                className="w-10 h-10 rounded-full border-2 border-zinc-950 hover:-translate-y-1 transition object-cover z-[4]"
-              />
-              <img
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200"
-                alt="User avatar"
-                className="w-10 h-10 rounded-full border-2 border-zinc-950 hover:-translate-y-1 transition object-cover z-[5]"
-              />
-            </div>
-            <div className="h-8 w-px bg-zinc-800" />
-            <div className="flex flex-col items-start">
-              <div className="flex items-center gap-1">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <svg
-                    key={i}
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="#FACC15"
-                    stroke="#FACC15"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" />
-                  </svg>
-                ))}
-                <span className="text-zinc-400 font-medium ml-1 text-sm">5.0</span>
-              </div>
-              <p className="text-sm text-zinc-500">
-                Нам доверяют <span className="text-zinc-300 font-medium">10 000+</span> разработчиков
-              </p>
-            </div>
+    <section className="bg-white pt-[120px]">
+      <div className="max-w-7xl mx-auto px-6 py-16 lg:py-24 grid lg:grid-cols-2 gap-12 items-center">
+        {/* Left text */}
+        <div>
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-brand-navy leading-[1.1] mb-6">
+            Найдём товар в Китае и организуем поставку{" "}
+            <span className="text-brand-green">под ключ</span>
+          </h1>
+          <p className="text-lg md:text-xl text-zinc-600 max-w-xl mb-8 leading-relaxed">
+            Белая доставка, карго, ВЭД. Один партнёр для всего цикла.
+          </p>
+          <div className="flex flex-col sm:flex-row items-start gap-4">
+            <a
+              href="#cta"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-base font-semibold rounded-lg bg-brand-navy text-white hover:bg-brand-navy/90 transition-colors"
+            >
+              Аудит закупок — бесплатно
+            </a>
+            <a
+              href="#"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-base font-semibold rounded-lg border-2 border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white transition-colors"
+            >
+              <Icon name="Send" size={18} />
+              Написать в Telegram
+            </a>
           </div>
+        </div>
+
+        {/* Right cards 2x2 */}
+        <div className="grid grid-cols-2 gap-4">
+          {cards.map((card) => (
+            <div
+              key={card.label}
+              className="bg-brand-navy rounded-2xl p-6 flex flex-col justify-between min-h-[150px]"
+            >
+              <Icon name={card.icon} size={28} className="text-brand-green mb-4" />
+              <div>
+                <div className="font-display text-2xl md:text-3xl font-bold text-white">
+                  {card.value}
+                </div>
+                <div className="text-sm text-white/70 mt-1">{card.label}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Stats bar */}
+      <div className="bg-brand-navy">
+        <div className="max-w-7xl mx-auto px-6 py-8 grid grid-cols-2 md:grid-cols-4 gap-6 divide-y md:divide-y-0 md:divide-x divide-white/15">
+          {stats.map((stat) => (
+            <div key={stat.label} className="text-center pt-4 md:pt-0 first:pt-0">
+              <div className="font-display text-3xl md:text-4xl font-bold text-white">
+                {stat.value}
+              </div>
+              <div className="text-sm text-white/70 mt-1">{stat.label}</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
